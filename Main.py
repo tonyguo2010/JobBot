@@ -11,14 +11,20 @@ from time import sleep
 
 
 # Set options for not prompting DevTools information
+from JobRbc import JobRbc
+
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 options.add_argument("--start-maximized")
 
 driver = webdriver.Chrome(options=options)
 
-driver.get("http://www.google.ca")
+jobs = []
+jobs.append(JobRbc())
+# driver.get("http://www.google.ca")
+for job in jobs:
+    job.set_driver(driver)
+    job.collect_job();
 
-sleep(5)
 # Close the driver
 driver.quit()
