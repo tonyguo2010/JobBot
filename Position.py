@@ -4,4 +4,7 @@ class Position:
         self.post_date = ''
         self.type = ''
         self.location = ''
+        self.url = ''
+        self.deadline = ''
+        self.platform = ''
 
